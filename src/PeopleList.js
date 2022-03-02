@@ -7,7 +7,7 @@ import { PeopleListItem } from "./PeopleListItem";
 export function PeopleList({ people }) {
   return (
     <>
-      {people.map(person => <PeopleListItem person={person} key={person.name}/>)}
+      {people.map((person,i) => <PeopleListItem person={person} key={i}/>)}
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Button } from './Button';
 
 export function CounterButton({ numberOfClicks, onIncrement }) {
   useEffect(() => 
@@ -9,7 +10,7 @@ export function CounterButton({ numberOfClicks, onIncrement }) {
   return (
     <>
       <p>You've clicked the button {numberOfClicks} times.</p>
-      <button onClick={onIncrement}>Clicked Me</button>
+      <Button buttonColor="red" onClick={onIncrement}>Clicked Me</Button>
     </>
   );
 }

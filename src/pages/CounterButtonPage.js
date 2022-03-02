@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CongratulationsMessage } from "../CongratulationsMessage";
 import { CounterButton } from "../CounterButton";
 import { useParams, useLocation } from "react-router-dom";
@@ -7,11 +7,13 @@ import { DisplayIf } from "../DisplayIf";
 
 export function CounterButtonPage() {
   // const { name } = useParams();
-  const location = useLocation();
-  const startingValue = parse(location.search).startingValue || 0;
+  // const location = useLocation();
+  // const startingValue = parse(location.search).startingValue || 0;
   // console.log(parse(location.search))
-  const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue));
+  // const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue));
+
   const [hideMessage, setHideMessage] = useState(false);
+  const [numberOfClicks, setNumberOfClicks] = usePersistentState('numberOfClicks', 0, Number);
   const increment = () => setNumberOfClicks(numberOfClicks + 1);
 
   return (
